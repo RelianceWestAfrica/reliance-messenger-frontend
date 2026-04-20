@@ -9,7 +9,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
         </div>
-        <h1 class="text-2xl font-bold text-white tracking-tight">Reliance Messenger</h1>
+        <h1 class="text-2xl font-bold text-white tracking-tight">Reliance Messenger Cc</h1>
         <p class="text-blue-200 text-sm mt-1">Système de messagerie interne</p>
       </div>
 
