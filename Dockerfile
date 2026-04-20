@@ -22,7 +22,6 @@ FROM nginx:1.25-alpine
 
 EXPOSE 80
 
-
 RUN rm -rf /usr/share/nginx/html/*
 
 COPY src/conf/default.conf /etc/nginx/conf.d/
