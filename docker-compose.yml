@@ -1,23 +1,23 @@
 services:
 
   # ── Production (built image served by Nginx) ──────────────────────────────
-  rwa-frontend:
+  rwam-frontend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: rwa-frontend
+    container_name: rwam-frontend
     restart: unless-stopped
     ports:
       - "80:80"
     environment:
       - NODE_ENV=production
     networks:
-      - rwa-network
+      - rwam-network
 
   # ── Development (Vite dev server with HMR) ────────────────────────────────
-  rwa-frontend-dev:
+  rwam-frontend-dev:
     image: node:20.14.0-alpine
-    container_name: rwa-frontend-dev
+    container_name: rwam-frontend-dev
     working_dir: /app
     volumes:
       - .:/app                        # live-reload: mount source
@@ -28,10 +28,10 @@ services:
       - NODE_ENV=development
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     networks:
-      - rwa-network
+      - rwam-network
     profiles:
       - dev                           # only starts with: docker compose --profile dev up
 
 networks:
-  rwa-network:
+  rwam-network:
     driver: bridge
