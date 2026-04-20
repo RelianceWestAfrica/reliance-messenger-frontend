@@ -22,13 +22,11 @@ FROM nginx:1.25-alpine
 
 EXPOSE 80
 
-# Remove default Nginx static assets
+
 RUN rm -rf /usr/share/nginx/html/*
 
-# Custom Nginx config (SPA routing support)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY src/conf/default.conf /etc/nginx/conf.d/
 
-# Copy Vite build output (dist/)
 COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/.htaccess /usr/share/nginx/html
 
-CMD ["nginx", "-g", "daemon off;"]
