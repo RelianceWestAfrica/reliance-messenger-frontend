@@ -1,0 +1,24 @@
+services:
+  # reliance_domains:
+  app:
+    container_name: rwam_frontend
+    #hostname: dp-senyo
+    # image: esmc-web:v1
+    # image: perce26/entrersortie:reliance_domains
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    #command: tail -F anyts
+    ports:
+      #- "3000:3000"
+      - "5173:80"
+      #environment:
+      #- API_BASE_URL=http://160.242.199.14:8888
+    networks:
+      - my-srv-net
+
+networks:
+  my-srv-net:
+    # external:
+    name: my-ng-net
