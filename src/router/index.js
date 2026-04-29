@@ -42,7 +42,8 @@ const routes = [
   {
     path:      '/webmail',
     component: WebmailLayout,
-    meta:      { requiresAuth: true },
+    // meta:      { requiresAuth: true },
+    meta:      { public: true },
     children: [
       { path: '',            redirect: 'inbox'   },
       { path: 'inbox',       name: 'Inbox',       component: InboxView         },
@@ -61,7 +62,8 @@ const routes = [
   {
     path:      '/admin',
     component: AdminLayout,
-    meta:      { requiresAuth: true, requiresSuperAdmin: true },
+    // meta:      { requiresAuth: true, requiresSuperAdmin: true },
+    meta:      { public: true },
     children: [
       { path: '',            redirect: 'dashboard'   },
       { path: 'dashboard',   name: 'Dashboard',      component: DashboardView  },
